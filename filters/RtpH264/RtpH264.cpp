@@ -122,7 +122,7 @@ long RtpH264::onReceive(long id, Buffer *data) {
             memcpy(reinterpret_cast<uint8_t *>(pkt->data()) + sizeof(start_sequence) + sizeof(nal), buf, len);
         } else {
             long pl = pkt->length();
-            if (len > pkt->size() - pl);
+            if (len > pkt->size() - pl)
                 pkt->setSize(pl + len);
             memcpy(reinterpret_cast<uint8_t *>(pkt->data()) + pl, buf, len);
             pkt->setLength(pl + len);

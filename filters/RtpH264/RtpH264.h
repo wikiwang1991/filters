@@ -29,6 +29,6 @@ private:
     SystemBuffer *pkt;
 };
 
-inline RtpH264::RtpH264() : pkt(new SystemBuffer) {}
+inline RtpH264::RtpH264() : pkt(new SystemBuffer) { pkt->setSize(0x80000); }
 
 }
